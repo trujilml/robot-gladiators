@@ -71,7 +71,16 @@ else {
     }
 };
 
-//fight each enemy-robot by looping over them and fighting them one at a time
+// function to start a new game
+var startGame = function() {
+    //reset player stats
+    playerHealth = 100;
+    playerAttack = 10;
+    playerMoney = 10;
+
+    //other logic remains the same
+
+};
 for(var i = 0; i < enemyNames.length; i++) {
     if (playerHealth > 0) {
     // if player know what round they are in, remember that arrays start at 0 so it needs to have 1 added
@@ -88,10 +97,14 @@ for(var i = 0; i < enemyNames.length; i++) {
 
     //pass the enemy name variable's value into the fight function where it will assume the value of the enemy name parameter
     fight(pickedEnemyName);
-}
+
+    //play again
+     startGame();
+    }
 // if player isn't alive, stop the game 
-   else { 
-       window.alert("You have lost your robot in battle! Game Over!");
-    break;
-}
-}
+ else { 
+        window.alert("You have lost your robot in battle! Game Over!");
+         break;
+
+ }
+};
